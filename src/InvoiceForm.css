@@ -1,0 +1,143 @@
+/* InvoiceForm.css */
+
+.container {
+    max-width: 600px;
+    margin: 2px auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: 600;
+    float: left;
+    opacity: 70%;
+    padding-bottom: 3px;
+  }
+  .row {
+    margin-bottom: 0px;
+  }
+
+#invoiceNumber, #billFrom, #price, #administrativeFee, #totalPrice, #venue, #monthNo, #dayNo, #dayName, #daySelect, #timeIn, #timeOut, #detail, #dueDate {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f8f9fd;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    font-family: mont, Montserrat
+}
+#invoiceNumber, #price, #administrativeFee, #monthNo, #dayNo, #dayName, #timeIn, #timeOut {
+    color: #B6baca;
+}
+#billFrom {
+    font-weight: bold;
+    color:#040F0F ;
+}
+#totalPrice {
+    font-weight: bold;
+    color: #040F0F;
+}
+#detail {
+    font-weight: bold;
+    color: #040F0F;
+}
+  /* .btn-center {
+    display: flex;
+    justify-content: center;
+  }
+   */
+.btn-pdf {
+    height: 50px;
+    background-color: #040F0F;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    width: 64%;
+    font-weight: 700;
+}
+  
+  /* #billFrom:focus,
+#price:focus,
+#administrativeFee:focus,
+#totalPrice:focus,
+#venue:focus,
+#monthNo:focus,
+#dayNo:focus,
+#dayName:focus,
+#timeIn:focus,
+#timeOut:focus {
+  border: 1 px solid black;
+} */
+
+  .btn-pdf:hover {
+    background-color: #333; /* Darker shade on hover */
+    color: #fff;
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+.nameHeading {
+    font-size: 24px;
+    display: none;
+    float: right;
+    font-family: mont, Montserrat;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+#invoice-heading {
+    display: inline;
+    font-size: 34px;
+}
+#user {
+    font-size: 34px;
+}
+#headings {
+    margin-bottom: 24px;
+}
+
+.currencyinput {
+    border: 1px inset #ccc;
+}
+
+    .currencyinput input {
+        border: 0;
+    }
+.col-md-2 img {
+    width:200px;
+    float:right;
+    margin-top:-60px;
+}
+.col-md-2 {
+    float : right;
+}
+.col-md-12 img{
+    width:226px;
+}
+.col-md-4{
+{
+    justify-content: end;
+    display: flex;
+}
+}

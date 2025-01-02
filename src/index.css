@@ -1,0 +1,27 @@
+
+
+@font-face {
+    font-family: 'mont';
+    src: local('mont'), url(./fonts/mont.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+select {
+  -webkit-appearance: none; /* for Chrome, Safari, and Opera */
+  -moz-appearance: none;    /* for Firefox */
+  appearance: none;         /* Standard syntax */
+  /* Add custom styles for your dropdown */
+}
