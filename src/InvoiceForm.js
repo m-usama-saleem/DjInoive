@@ -1,8 +1,5 @@
 import './InvoiceForm.css';
-import React, { useState, useEffect, useRef } from 'react';
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { saveAs } from 'file-saver';
+import React, { useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import TimePickerModal from './TimePickerModal';
@@ -13,11 +10,10 @@ import venueFromListData from './data/venue_from_list.txt';
 import { format } from 'date-fns';
 
 const InvoiceForm = () => {
-    const [billFrom, setBillFrom] = useState('');
     const [invoiceNo, setInvoiceNo] = useState('');
     const [invoiceName, setInvoiceName] = useState('');
     const [price, setPrice] = useState('');
-    const [administrativeFee, setAdministrativeFee] = useState('3%');
+    const [administrativeFee] = useState('3%');
     const [totalPrice, setTotalPrice] = useState('');
     const [venue, setVenue] = useState('');
     const [monthNo, setMonthNo] = useState('');
@@ -26,10 +22,7 @@ const InvoiceForm = () => {
     const [timeIn, setTimeIn] = useState('');
     const [timeOut, setTimeOut] = useState('');
     const [detail, setDetail] = useState('');
-    const [showTimePicker, setShowTimePicker] = useState(false);
-    const [selectedTimeInput, setSelectedTimeInput] = useState('');
     const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
-    const [nameHead, setNameHead] = useState(false);
     const [billFromOptions, setBillFromOptions] = useState([]);
     const [venueFromOptions, setVenueFromOptions] = useState([]);
     const [textContent, setTextContent] = useState('');
@@ -53,23 +46,6 @@ const InvoiceForm = () => {
         timeIn: '',
         timeOut: ''
     });
-
-    const clearErrors = () => {
-        setErrors({
-            billFrom: '',
-            invoiceNo: '',
-            invoiceName: '',
-            price: '',
-            administrativeFee: '',
-            totalPrice: '',
-            venue: '',
-            monthNo: '',
-            dayNo: '',
-            dayName: '',
-            timeIn: '',
-            timeOut: ''
-        });
-    };
 
     useEffect(() => {
         const detailText = `${venue} ${monthNo}${dayNo} ${dayName} ${timeIn}-${timeOut}`;
@@ -101,11 +77,6 @@ const InvoiceForm = () => {
                 setState(options);
             })
             .catch(error => console.error(`Error loading options:`, error));
-    };
-
-    const handleTimeInputChange = (e) => {
-        setSelectedTimeInput(e.target.id);
-        setShowTimePicker(true);
     };
 
     const handleCopyToClipboard = () => {
@@ -246,7 +217,6 @@ const InvoiceForm = () => {
             <form>
                 <div className="row">
                     <div id="pdfContent">
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
@@ -256,7 +226,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
@@ -266,7 +235,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="col-md-6">
@@ -302,7 +270,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="form-group">
@@ -326,7 +293,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
@@ -340,7 +306,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="form-group">
@@ -420,7 +385,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
@@ -437,7 +401,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
@@ -446,7 +409,6 @@ const InvoiceForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ...existing code... */}
                         <div className="row">
                             <div className="col-md-12 text-center" data-html2canvas-ignore >
                                 <button type="button" className="btn btn-center btn-pdf" onClick={handleDownloadPDF} >Download & Send Invoice</button>

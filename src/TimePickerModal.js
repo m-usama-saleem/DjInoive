@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './TimePickerModal.css';
 import TimeKeeper from 'react-timekeeper';
 
@@ -12,27 +12,9 @@ const TimePickerModal = ({ isOpen, onClose, selectedTime, onChange }) => {
   const timeChanged = (time) =>{
       if (time !== undefined && time !== null) {
           var timeVal = extractTime(time.formatted);
-          debugger;
-
         setTime(timeVal);
     }
   }
-    // const extractTime = (inputString) => {
-    //     const pattern = /(\d+)(:\d{2})?\s*([AP])M/i;
-
-    //     // Use the 'match' method to extract the value that matches the pattern
-    //     const matchedValue = inputString.match(pattern);
-
-    //     // Check if a match is found and return the result, else return null
-    //     if (matchedValue) {
-    //         const hour = matchedValue[1];
-    //         const minute = matchedValue[2] ? matchedValue[2] : '';
-    //         const period = matchedValue[3].toUpperCase();
-    //         return hour + period;
-    //     } else {
-    //         return '';
-    //     }
-    // }
     const extractTime = (inputString) => {
       const pattern = /(\d+)(:\d{2})?\s*([AP])M/i;
   
@@ -59,7 +41,6 @@ const TimePickerModal = ({ isOpen, onClose, selectedTime, onChange }) => {
       {isOpen && (
         <div className="time-picker-modal-container">
           <TimeKeeper
-           // time={time}
             onChange={(data) => timeChanged(data)}
             onDoneClick={() => handleSaveTime()}
             />
